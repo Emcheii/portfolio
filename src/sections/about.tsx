@@ -5,7 +5,7 @@ function About(){
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
 
                 <img loading="lazy"
-                src="/light-mode.png" 
+                src="/portfolio/light-mode.png" 
                 alt="Marlou Profile" 
                 className="w-32 h-32 md:w-40 rounded-full border border-slate-800 object-cover" />
                 
