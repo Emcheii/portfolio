@@ -38,7 +38,7 @@ function Projects(){
             details: "Built admin access for full content management and user access for viewing published posts using Docker, DBeaver, HTML, CSS, and Flask.",
             techStack: ["Flask", "Docker", "DBeaver", "HTML", "CSS"],
             image: `${import.meta.env.BASE_URL}projects/blog-app-default.svg`,
-            github: "",
+            github: "https://github.com/Emcheii/blog_app",
             demo: ""
         }
     ]
