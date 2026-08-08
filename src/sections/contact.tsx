@@ -34,7 +34,10 @@ export default function Contact() {
 
     return (
         // Keep max-w-4xl mx-auto px-8 aligned with the Skills section
-        <section id="contact" className="max-w-4xl mx-auto px-8 py-24 text-slate-800 dark:text-slate-200 font-sans text-center">
+        <section
+            id="contact"
+            className="max-w-4xl mx-auto px-8 py-24 text-slate-800 dark:text-slate-200 font-sans text-center"
+        >
             <h2 className="text-3xl font-semibold tracking-wide mb-4">
                 Let's build something
             </h2>
@@ -68,11 +71,19 @@ export default function Contact() {
                             title={`Visit ${link.name}`}
                         >
                             <IconComponent className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                            <span className="text-sm font-medium hidden sm:inline">{link.name}</span>
+                            <span className="text-sm font-medium hidden sm:inline">
+                                {link.name}
+                            </span>
                         </a>
                     );
                 })}
             </div>
+
+            <p className="mt-12 max-w-xl mx-auto text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+                Thanks for visiting my portfolio. I am always open to learning,
+                building, and connecting with people who enjoy creating useful digital
+                experiences.
+            </p>
         </section>
     );
 }
