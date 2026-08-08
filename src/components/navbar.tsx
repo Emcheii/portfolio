@@ -99,7 +99,7 @@ export default function Navbar() {
                                     href={item.href}
                                     className={`flex items-center gap-2 px-3 py-1 border-2 text-md rounded-md transition-all duration-200 ${isActive
                                             ? "border-sky-400 text-sky-400" // Active state uses a border only, with no background color
-                                            : "border-transparent text-slate-300 hover:border-sky-400 hover:text-sky-400"
+                                            : "border-transparent text-black dark:text-slate-300 hover:border-sky-400 hover:text-sky-400"
                                         }`}
                                 >
                                     <Icon className="w-4 h-4" />
@@ -161,7 +161,7 @@ export default function Navbar() {
                                     href={item.href}
                                     className={`flex items-center gap-3 px-3 py-2 border-2 text-md rounded-md hover:border-sky-400 hover:text-sky-400 transition-all ${activeSection === item.id
                                             ? "border-sky-400 text-sky-400"
-                                            : "border-transparent text-slate-700 dark:text-slate-300"
+                                            : "border-transparent text-black dark:text-slate-300"
                                         }`}
                                 >
                                     <Icon className="w-4 h-4 text-sky-400" />
