@@ -37,7 +37,9 @@ export default function Navbar() {
 
     useEffect(() => {
         const updateActiveSection = () => {
+            const contactSection = document.getElementById("contact");
             const isAtPageBottom =
+                contactSection !== null &&
                 window.scrollY + window.innerHeight >=
                 document.documentElement.scrollHeight - 24;
 
