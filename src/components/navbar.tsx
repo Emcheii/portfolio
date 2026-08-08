@@ -25,29 +25,28 @@ export default function Navbar() {
         setIsDark((currentTheme) => !currentTheme);
     };
 
-    // 1. Intersection Observer logic to determine the user's position while scrolling on desktop
     useEffect(() => {
-        const observers = navLinks.map((link) => {
-            const element = document.getElementById(link.id);
-            if (!element) return null;
+        const updateActiveSection = () => {
+            const activationPoint = window.innerHeight * 0.35;
+            let currentSection = navLinks[0].id;
 
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(link.id);
-                    }
-                },
-                { rootMargin: "-30% 0px -60% 0px" } // Triggers when the section is in the center of the screen
-            );
+            for (const link of navLinks) {
+                const element = document.getElementById(link.id);
+                if (element && element.getBoundingClientRect().top <= activationPoint) {
+                    currentSection = link.id;
+                }
+            }
 
-            observer.observe(element);
-            return { observer, element };
-        });
+            setActiveSection(currentSection);
+        };
+
+        updateActiveSection();
+        window.addEventListener("scroll", updateActiveSection, { passive: true });
+        window.addEventListener("resize", updateActiveSection);
 
         return () => {
-            observers.forEach((item) => {
-                if (item) item.observer.unobserve(item.element);
-            });
+            window.removeEventListener("scroll", updateActiveSection);
+            window.removeEventListener("resize", updateActiveSection);
         };
     }, []);
 
@@ -86,9 +85,15 @@ export default function Navbar() {
                         <button
                             onClick={toggleTheme}
                             className="p-1 rounded-md text-slate-600 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 hover:scale-110 transition-transform cursor-pointer"
-                            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                            aria-label={
+                                isDark ? "Switch to light mode" : "Switch to dark mode"
+                            }
                         >
-                            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                            {isDark ? (
+                                <Sun className="w-5 h-5" />
+                            ) : (
+                                <Moon className="w-5 h-5" />
+                            )}
                         </button>
                     </li>
                 </ul>
@@ -100,7 +105,11 @@ export default function Navbar() {
                         className="p-1 text-slate-600 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 cursor-pointer"
                         aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
                     >
-                        {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                        {isDark ? (
+                            <Sun className="w-5 h-5" />
+                        ) : (
+                            <Moon className="w-5 h-5" />
+                        )}
                     </button>
                     <button
                         onClick={() => setIsOpen(!isOpen)}

@@ -62,7 +62,7 @@ function Projects() {
                         key={project.name}
                         className="min-w-0 border border-slate-200 dark:border-blue-800/60 rounded-xl overflow-hidden bg-white dark:bg-linear-to-br dark:from-blue-950/90 dark:via-slate-900/90 dark:to-slate-950 shadow-sm dark:shadow-lg dark:shadow-blue-950/30"
                     >
-                        <div className="w-full min-w-0 aspect-2/1 overflow-hidden border-b border-slate-200 dark:border-blue-800/60">
+                        <div className="w-full min-w-0 aspect-[2/1] overflow-hidden border-b border-slate-200 dark:border-blue-800/60">
                             <img
                                 src={project.image}
                                 alt={`${project.name} default project image`}
