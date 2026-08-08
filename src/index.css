@@ -1,3 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background-color: #f8fafc;
+}
+
+html.dark {
+  background-color: #020617;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.loader-ring {
+  animation: loader-spin 1s linear infinite;
+}
+
+.loader-progress {
+  animation: loader-progress 900ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

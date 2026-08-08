@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#312e81"/>
+      <stop offset="0.55" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <circle cx="980" cy="100" r="180" fill="#818cf8" opacity=".2"/>
+  <circle cx="1080" cy="500" r="260" fill="#38bdf8" opacity=".14"/>
+  <path d="M120 390h250M120 430h170M120 470h210" stroke="#bfdbfe" stroke-width="18" stroke-linecap="round" opacity=".7"/>
+  <text x="120" y="190" fill="#fff" font-family="Arial, sans-serif" font-size="68" font-weight="700">i-DALAN</text>
+  <text x="120" y="270" fill="#dbeafe" font-family="Arial, sans-serif" font-size="28">Course recommendation system</text>
+  <path d="M820 260l70 70 150-150" fill="none" stroke="#a5f3fc" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

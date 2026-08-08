@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#065f46"/>
+      <stop offset="0.55" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <rect x="760" y="120" width="260" height="360" rx="22" fill="#ecfeff" opacity=".12"/>
+  <path d="M820 220h130M820 300h130M820 380h100" stroke="#a7f3d0" stroke-width="18" stroke-linecap="round"/>
+  <path d="M780 218l18 18 34-38M780 298l18 18 34-38M780 378l18 18 34-38" fill="none" stroke="#5eead4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="100" y="220" fill="#fff" font-family="Arial, sans-serif" font-size="68" font-weight="700">TO-DO LIST</text>
+  <text x="105" y="300" fill="#ccfbf1" font-family="Arial, sans-serif" font-size="28">Full-stack task management</text>
+</svg>
