@@ -13,11 +13,9 @@ function Projects() {
     const projects: Project[] = [
         {
             name: "TO-DO List",
-            description:
-                "Full-stack task management application with dated tasks stored in a database.",
+            description: "Full-stack task management application with dated tasks stored in a database.",
             role: "Full-stack developer",
-            details:
-                "Implemented the user interface, Flask backend, database integration, and task management workflow.",
+            details: "Implemented the user interface, Flask backend, database integration, and task management workflow.",
             techStack: ["Flask", "Python", "MySQL", "HTML", "SCSS"],
             image: `${import.meta.env.BASE_URL}projects/todo-list-default.svg`,
             github: "https://github.com/Emcheii/to-do_list",
@@ -25,11 +23,9 @@ function Projects() {
         },
         {
             name: "Blog App",
-            description:
-                "Role-based blogging platform with separate administration and reader experiences.",
+            description: "Role-based blogging platform with separate administration and reader experiences.",
             role: "Full-stack developer",
-            details:
-                "Built admin access for full content management and user access for viewing published posts using Docker, DBeaver, HTML, CSS, and Flask.",
+            details: "Built admin access for full content management and user access for viewing published posts using Docker, DBeaver, HTML, CSS, and Flask.",
             techStack: ["Flask", "Docker", "DBeaver", "HTML", "CSS"],
             image: `${import.meta.env.BASE_URL}projects/blog-app-default.svg`,
             github: "https://github.com/Emcheii/blog_app",
@@ -40,16 +36,15 @@ function Projects() {
     return (
         <section
             id="projects"
-            className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-16 text-slate-800 dark:text-slate-200 font-sans"
-        >
+            className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-16 text-slate-800 dark:text-slate-200 font-sans" >
+
             <h2 className="text-3xl font-semibold tracking-wide mb-10">Projects</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map((project) => (
                     <div
                         key={project.name}
-                        className="min-w-0 border border-slate-200 dark:border-blue-800/60 rounded-xl overflow-hidden bg-white dark:bg-linear-to-br dark:from-blue-950/90 dark:via-slate-900/90 dark:to-slate-950 shadow-sm dark:shadow-lg dark:shadow-blue-950/30"
-                    >
+                        className="min-w-0 border border-slate-200 dark:border-blue-800/60 rounded-xl overflow-hidden bg-white dark:bg-linear-to-br dark:from-blue-950/90 dark:via-slate-900/90 dark:to-slate-950 shadow-sm dark:shadow-lg dark:shadow-blue-950/30" >
                         <div className="w-full min-w-0 aspect-2/1 overflow-hidden border-b border-slate-200 dark:border-blue-800/60">
                             <img
                                 src={project.image}
