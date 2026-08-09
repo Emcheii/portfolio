@@ -12,18 +12,6 @@ interface Project {
 function Projects() {
     const projects: Project[] = [
         {
-            name: "Project i-DALAN",
-            description:
-                "Intelligent course recommendation system for incoming first-year students.",
-            role: "Full-stack developer and thesis document contributor",
-            details:
-                "Built the application across the frontend and backend while contributing to the system design, implementation, testing, and thesis documentation.",
-            techStack: ["Django", "Python", "Google Colab", "MySQL", "HTML/CSS"],
-            image: `${import.meta.env.BASE_URL}projects/idalan-default.svg`,
-            github: "https://github.com/yourusername/idalan",
-            demo: "",
-        },
-        {
             name: "TO-DO List",
             description:
                 "Full-stack task management application with dated tasks stored in a database.",
