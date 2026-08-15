@@ -1,23 +1,9 @@
-import { useEffect, useState } from "react";
-import profile from "../assets/light-mode.png";
+import { useTheme } from "../context/ThemeContext";
+import lightProfile from "../assets/light-mode.png";
+import darkProfile from "../assets/dark-mode.png";
 
 function About() {
-  const [isDark, setIsDark] = useState(
-    () => localStorage.getItem("theme") !== "light",
-  );
-
-  useEffect(() => {
-    const themeObserver = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains("dark"));
-    });
-
-    themeObserver.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => themeObserver.disconnect();
-  }, []);
+  const { isDark } = useTheme();
 
   return (
     <section
@@ -27,7 +13,7 @@ function About() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="relative w-32 h-32 md:w-40 md:h-40 shrink-0">
           <img
-            src={isDark ? `${import.meta.env.BASE_URL}dark-mode.png` : profile}
+            src={isDark ? darkProfile : lightProfile}
             alt={
               isDark ? "Marlou Profile wearing sunglasses" : "Marlou Profile"
             }

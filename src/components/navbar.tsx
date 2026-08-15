@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { User, Code, Briefcase, Mail, Sun, Moon, Menu, X } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 const navLinks = [
     { label: "About", href: "#about", icon: User, id: "about" },
@@ -10,25 +11,13 @@ const navLinks = [
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const [isDark, setIsDark] = useState<boolean>(() => {
-        const savedTheme = localStorage.getItem("theme");
-        return savedTheme ? savedTheme === "dark" : true;
-    });
+    const { isDark, toggleTheme } = useTheme();
     const [activeSection, setActiveSection] = useState<string>(() => {
         const sectionFromHash = window.location.hash.slice(1);
         return navLinks.some((link) => link.id === sectionFromHash)
             ? sectionFromHash
             : "about";
     });
-
-    useEffect(() => {
-        document.documentElement.classList.toggle("dark", isDark);
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-    }, [isDark]);
-
-    const toggleTheme = (): void => {
-        setIsDark((currentTheme) => !currentTheme);
-    };
 
     const handleNavClick = (sectionId: string): void => {
         setActiveSection(sectionId);
